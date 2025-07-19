@@ -158,7 +158,7 @@ const AboutSection = () => {
               {/* Image container */}
               <div className="relative w-80 h-80 rounded-full overflow-hidden glass border-2 border-primary/30">
                 <img 
-                  src={profileImage}
+                  src="/lovable-uploads/1cebfdde-5f4d-4a3c-834c-789217b7e79c.png"
                   alt="Milad - Web Developer"
                   className="w-full h-full object-cover"
                 />

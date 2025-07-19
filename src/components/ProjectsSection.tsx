@@ -87,7 +87,7 @@ const ProjectsSection = () => {
       title: "YouTube Clone",
       description: "Full-featured YouTube clone with video streaming, user authentication, and responsive design.",
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      image: "/lovable-uploads/7c850b9c-7379-40d0-b60a-55f11e6418d9.png",
+      image: "/lovable-uploads/1d5ea878-9bbf-424a-b806-f77251b0b11c.png",
       github: "#",
       live: "#",
       featured: true

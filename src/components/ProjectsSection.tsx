@@ -97,7 +97,7 @@ const ProjectsSection = () => {
       title: "3D Portfolio",
       description: "Interactive 3D portfolio website with Three.js animations and immersive user experience.",
       tech: ["Three.js", "React", "GSAP", "Blender"],
-      image: "/lovable-uploads/8c620d1c-22aa-4472-b7cf-14cb3d49de01.png",
+      image: "/lovable-uploads/629e004c-cb11-4e68-8304-d7a35de57ce0.png",
       github: "#",
       live: "#",
       featured: true

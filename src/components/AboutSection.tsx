@@ -190,7 +190,7 @@ const AboutSection = () => {
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p>
                 I'm a passionate <span className="text-primary font-medium">full-stack developer</span> with 
-                over 5 years of experience crafting digital experiences that push the boundaries of what's possible on the web.
+                over 2 years of experience crafting digital experiences that push the boundaries of what's possible on the web.
               </p>
               
               <p>

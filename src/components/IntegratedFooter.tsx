@@ -301,7 +301,7 @@ const IntegratedFooter = () => {
                 <div className="space-y-4">
                   <div>
                     <p className="text-muted-foreground text-sm uppercase tracking-wide">Email</p>
-                    <p className="text-foreground font-medium">hello@prajitdev.com</p>
+                    <p className="text-foreground font-medium">rprajit62@gmail.com</p>
                   </div>
                   
                   <div>
@@ -311,7 +311,7 @@ const IntegratedFooter = () => {
                   
                   <div>
                     <p className="text-muted-foreground text-sm uppercase tracking-wide">Location</p>
-                    <p className="text-foreground font-medium">San Francisco, CA</p>
+                    <p className="text-foreground font-medium">Madurai, Tamil Nadu</p>
                   </div>
                 </div>
               </div>

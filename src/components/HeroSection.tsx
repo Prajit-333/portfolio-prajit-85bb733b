@@ -107,6 +107,22 @@ const HeroSection = () => {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* 3D Background - Only on Hero Section */}
+      <div className="absolute inset-0 z-0">
+        <iframe 
+          src="https://my.spline.design/orb-5oFfv1TG84UKAf1p2DGpenyu/" 
+          frameBorder="0" 
+          width="100%" 
+          height="100%"
+          className="absolute inset-0"
+          title="3D Background Animation"
+          style={{ 
+            filter: 'brightness(0.6)',
+            transform: 'scale(1.05)'
+          }}
+        />
+        <div className="absolute inset-0 bg-background/20" />
+      </div>
       {/* Animated Background Orbs */}
       <div className="absolute inset-0">
         <div className="hero-orb-1 absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl -top-48 -left-48" />

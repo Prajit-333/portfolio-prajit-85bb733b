@@ -77,9 +77,6 @@ const Portfolio = () => {
 
   return (
     <div className="relative">
-      {/* Full-page 3D Background */}
-      <FullPage3DBackground />
-      
       <Navigation />
       
       <main data-scroll-container className="relative z-10">

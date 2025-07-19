@@ -47,14 +47,13 @@ const FullPage3DBackground = () => {
           className="absolute inset-0"
           title="3D Background Animation"
           style={{ 
-            filter: 'blur(1px) brightness(0.7)',
-            transform: 'scale(1.1)'
+            filter: 'brightness(0.8)',
+            transform: 'scale(1.05)'
           }}
         />
         
-        {/* Overlay gradients for better readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20" />
+        {/* Minimal overlay for better text readability */}
+        <div className="absolute inset-0 bg-background/10" />
         
         {/* Additional floating elements for depth */}
         <div className="absolute top-20 left-20 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-float" />

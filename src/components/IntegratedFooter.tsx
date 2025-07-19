@@ -29,99 +29,103 @@ const IntegratedFooter = () => {
     
     if (!section) return;
 
-    // Contact title animation
+    // Lighter contact title animation - always visible
     gsap.fromTo(titleRef.current,
       {
-        opacity: 0,
-        y: 50,
-        filter: 'blur(10px)'
+        opacity: 0.4,
+        y: 15
       },
       {
         opacity: 1,
-        y: 0,
-        filter: 'blur(0px)',
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
-    // Form animation
-    gsap.fromTo(formRef.current?.children,
-      {
-        opacity: 0,
-        x: -50
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: formRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
-    // Footer content animation
-    gsap.fromTo(footerContentRef.current,
-      {
-        opacity: 0,
-        y: 60,
-        filter: 'blur(10px)'
-      },
-      {
-        opacity: 1,
-        y: 0,
-        filter: 'blur(0px)',
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: footerContentRef.current,
-          start: 'top 90%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
-    // Social icons animation
-    gsap.fromTo(socialRef.current?.children,
-      {
-        opacity: 0,
-        scale: 0.5,
-        y: 30
-      },
-      {
-        opacity: 1,
-        scale: 1,
         y: 0,
         duration: 0.6,
-        stagger: 0.1,
-        ease: 'back.out(1.7)',
+        ease: 'power1.out',
         scrollTrigger: {
-          trigger: socialRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
+          trigger: titleRef.current,
+          start: 'top 95%',
+          end: 'bottom 5%',
+          toggleActions: 'play none none none'
         }
       }
     );
 
-    // Floating particles animation
+    // Lighter form animation - more static
+    if (formRef.current?.children) {
+      gsap.set(formRef.current.children, {
+        opacity: 0.6,
+        x: -20
+      });
+      
+      gsap.to(formRef.current.children,
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    }
+
+    // Lighter footer content animation
+    gsap.fromTo(footerContentRef.current,
+      {
+        opacity: 0.5,
+        y: 20
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power1.out',
+        scrollTrigger: {
+          trigger: footerContentRef.current,
+          start: 'top 95%',
+          end: 'bottom 5%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    // Subtle social icons animation
+    if (socialRef.current?.children) {
+      gsap.set(socialRef.current.children, {
+        opacity: 0.7,
+        scale: 0.95
+      });
+      
+      gsap.to(socialRef.current.children,
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.4,
+          stagger: 0.05,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: socialRef.current,
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    }
+
+    // Reduced floating particles animation
     gsap.to('.footer-particle', {
-      y: -20,
-      duration: 3,
+      y: -8,
+      duration: 4,
       repeat: -1,
       yoyo: true,
       ease: 'power1.inOut',
       stagger: {
-        each: 0.5,
+        each: 0.8,
         from: 'random'
       }
     });

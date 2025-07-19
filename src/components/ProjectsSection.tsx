@@ -16,65 +16,62 @@ const ProjectsSection = () => {
     
     if (!section) return;
 
-    // Title animation with bouncing effect
+    // Lighter title animation - always visible
     gsap.fromTo(titleRef.current,
       {
-        opacity: 0,
-        scale: 0.5,
-        rotation: -5,
-        filter: 'blur(15px)'
+        opacity: 0.3,
+        y: 20
       },
       {
         opacity: 1,
-        scale: 1,
-        rotation: 0,
-        filter: 'blur(0px)',
-        duration: 1.5,
-        ease: 'elastic.out(1, 0.5)',
+        y: 0,
+        duration: 0.8,
+        ease: 'power1.out',
         scrollTrigger: {
           trigger: titleRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
+          start: 'top 95%',
+          end: 'bottom 5%',
+          toggleActions: 'play none none none'
         }
       }
     );
 
-    // Cards animation with morphing effects
+    // Lighter cards animation - more static
     const cards = gridRef.current?.children;
     if (cards) {
+      // Set initial state to be mostly visible
+      gsap.set(cards, {
+        opacity: 0.7,
+        y: 20,
+        scale: 0.98
+      });
+
       Array.from(cards).forEach((card, index) => {
-        gsap.fromTo(card,
-          {
-            opacity: 0,
-            y: 150,
-            rotationX: 90,
-            scale: 0.5,
-            transformOrigin: "center bottom"
-          },
+        gsap.to(card,
           {
             opacity: 1,
             y: 0,
-            rotationX: 0,
             scale: 1,
-            duration: 1.2,
-            delay: index * 0.2,
-            ease: 'back.out(2)',
+            duration: 0.6,
+            delay: index * 0.1,
+            ease: 'power1.out',
             scrollTrigger: {
               trigger: card as Element,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse'
+              start: 'top 90%',
+              end: 'bottom 10%',
+              toggleActions: 'play none none none'
             }
           }
         );
 
-        // Floating animation for each card
+        // Subtle floating animation - reduced intensity
         gsap.to(card, {
-          y: index % 2 === 0 ? -10 : 10,
-          duration: 3 + (index * 0.3),
+          y: index % 2 === 0 ? -3 : 3,
+          duration: 4 + (index * 0.2),
           repeat: -1,
           yoyo: true,
           ease: 'power1.inOut',
-          delay: index * 0.5
+          delay: index * 0.3
         });
       });
     }

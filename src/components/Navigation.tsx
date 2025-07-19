@@ -52,7 +52,7 @@ const Navigation = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Milad
+              Prajit
             </div>
 
             {/* Desktop Navigation */}

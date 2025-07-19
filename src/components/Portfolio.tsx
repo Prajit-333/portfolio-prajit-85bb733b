@@ -7,8 +7,8 @@ import Navigation from './Navigation';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ProjectsSection from './ProjectsSection';
-import ContactSection from './ContactSection';
-import Footer from './Footer';
+import IntegratedFooter from './IntegratedFooter';
+import FullPage3DBackground from './FullPage3DBackground';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -77,14 +77,16 @@ const Portfolio = () => {
 
   return (
     <div className="relative">
+      {/* Full-page 3D Background */}
+      <FullPage3DBackground />
+      
       <Navigation />
       
-      <main data-scroll-container className="relative">
+      <main data-scroll-container className="relative z-10">
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
-        <ContactSection />
-        <Footer />
+        <IntegratedFooter />
       </main>
     </div>
   );

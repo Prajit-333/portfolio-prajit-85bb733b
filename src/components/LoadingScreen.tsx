@@ -66,7 +66,7 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
         {/* Logo/Name */}
         <div ref={textRef} className="space-y-4">
           <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Milad
+            Prajit
           </h1>
           <p className="text-muted-foreground text-lg tracking-wide">
             Loading Portfolio...

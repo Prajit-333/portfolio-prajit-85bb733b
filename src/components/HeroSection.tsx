@@ -124,7 +124,7 @@ const HeroSection = () => {
             >
               <span className="block text-foreground">Hi, I'm</span>
               <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                Milad
+                Prajit
               </span>
               <span className="block text-foreground text-3xl md:text-4xl lg:text-5xl mt-2">
                 Web Developer
@@ -160,26 +160,21 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Spline 3D Model Column */}
-          <div ref={splineRef} className="relative">
-            <div className="relative w-full h-96 lg:h-[600px] rounded-2xl overflow-hidden glass">
-              <iframe 
-                src="https://my.spline.design/orb-5oFfv1TG84UKAf1p2DGpenyu/" 
-                frameBorder="0" 
-                width="100%" 
-                height="100%"
-                className="rounded-2xl"
-                title="3D Orb Animation"
-              />
-              
-              {/* Gradient overlay for better integration */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
+          {/* Content Display - No 3D model here anymore */}
+          <div ref={splineRef} className="relative flex items-center justify-center">
+            <div className="relative w-full h-96 lg:h-[600px] flex items-center justify-center">
+              {/* Central glowing orb as focal point */}
+              <div className="relative">
+                <div className="w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute inset-0 w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full blur-2xl animate-glow" />
+                
+                {/* Floating particles around the orb */}
+                <div className="absolute -top-8 -right-8 w-4 h-4 bg-primary rounded-full animate-bounce" />
+                <div className="absolute -bottom-6 -left-6 w-3 h-3 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
+                <div className="absolute top-1/2 -left-12 w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+                <div className="absolute -top-4 left-1/2 w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDelay: '1.5s' }} />
+              </div>
             </div>
-            
-            {/* Floating elements around the 3D model */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary/60 rounded-full blur-sm animate-pulse" />
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary/60 rounded-full blur-sm animate-pulse delay-700" />
-            <div className="absolute top-1/2 -left-6 w-4 h-4 bg-accent/60 rounded-full blur-sm animate-pulse delay-1000" />
           </div>
         </div>
       </div>

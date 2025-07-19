@@ -16,19 +16,21 @@ const ProjectsSection = () => {
     
     if (!section) return;
 
-    // Title animation
+    // Title animation with bouncing effect
     gsap.fromTo(titleRef.current,
       {
         opacity: 0,
-        y: 50,
-        filter: 'blur(10px)'
+        scale: 0.5,
+        rotation: -5,
+        filter: 'blur(15px)'
       },
       {
         opacity: 1,
-        y: 0,
+        scale: 1,
+        rotation: 0,
         filter: 'blur(0px)',
-        duration: 1,
-        ease: 'power2.out',
+        duration: 1.5,
+        ease: 'elastic.out(1, 0.5)',
         scrollTrigger: {
           trigger: titleRef.current,
           start: 'top 80%',
@@ -37,27 +39,45 @@ const ProjectsSection = () => {
       }
     );
 
-    // Cards animation
-    gsap.fromTo(gridRef.current?.children,
-      {
-        opacity: 0,
-        y: 100,
-        scale: 0.8
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'back.out(1.7)',
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
+    // Cards animation with morphing effects
+    const cards = gridRef.current?.children;
+    if (cards) {
+      Array.from(cards).forEach((card, index) => {
+        gsap.fromTo(card,
+          {
+            opacity: 0,
+            y: 150,
+            rotationX: 90,
+            scale: 0.5,
+            transformOrigin: "center bottom"
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotationX: 0,
+            scale: 1,
+            duration: 1.2,
+            delay: index * 0.2,
+            ease: 'back.out(2)',
+            scrollTrigger: {
+              trigger: card as Element,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+
+        // Floating animation for each card
+        gsap.to(card, {
+          y: index % 2 === 0 ? -10 : 10,
+          duration: 3 + (index * 0.3),
+          repeat: -1,
+          yoyo: true,
+          ease: 'power1.inOut',
+          delay: index * 0.5
+        });
+      });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());

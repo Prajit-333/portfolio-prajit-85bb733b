@@ -84,63 +84,33 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Modern e-commerce solution with React, TypeScript, and Stripe integration.",
-      tech: ["React", "TypeScript", "Node.js", "Stripe"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      title: "YouTube Clone",
+      description: "Full-featured YouTube clone with video streaming, user authentication, and responsive design.",
+      tech: ["React", "Node.js", "MongoDB", "Express"],
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
       github: "#",
       live: "#",
       featured: true
     },
     {
       id: 2,
-      title: "AI Dashboard",
-      description: "Real-time analytics dashboard with machine learning insights.",
-      tech: ["Next.js", "Python", "TensorFlow", "D3.js"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      title: "3D Portfolio",
+      description: "Interactive 3D portfolio website with Three.js animations and immersive user experience.",
+      tech: ["Three.js", "React", "GSAP", "Blender"],
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop",
       github: "#",
       live: "#",
       featured: true
     },
     {
       id: 3,
-      title: "Crypto Wallet",
-      description: "Secure Web3 wallet with DeFi integration and portfolio tracking.",
-      tech: ["React", "Web3.js", "Solidity", "Ethers.js"],
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop",
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Social Media App",
-      description: "Full-stack social platform with real-time messaging and content sharing.",
-      tech: ["React Native", "Firebase", "Node.js", "Socket.io"],
-      image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&h=400&fit=crop",
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      id: 5,
       title: "Task Management Tool",
-      description: "Collaborative project management with team synchronization.",
-      tech: ["Vue.js", "Laravel", "MySQL", "Redis"],
+      description: "Collaborative project management with team synchronization and real-time updates.",
+      tech: ["React", "Firebase", "Tailwind", "Redux"],
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
       github: "#",
       live: "#",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "AR Shopping Experience",
-      description: "Augmented reality shopping app with 3D product visualization.",
-      tech: ["Three.js", "WebXR", "React", "AR.js"],
-      image: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=600&h=400&fit=crop",
-      github: "#",
-      live: "#",
-      featured: false
+      featured: true
     }
   ];
 
@@ -200,13 +170,11 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`relative group cursor-pointer ${
-                project.featured ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+              className="relative group cursor-pointer"
               onMouseEnter={handleCardHover}
               onMouseLeave={handleCardLeave}
             >
@@ -224,12 +192,10 @@ const ProjectsSection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   
-                  {/* Featured badge */}
-                  {project.featured && (
-                    <div className="absolute top-4 right-4 px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-primary text-xs font-medium border border-primary/30">
-                      Featured
-                    </div>
-                  )}
+                  {/* Featured badge - All are featured now */}
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-primary text-xs font-medium border border-primary/30">
+                    Featured
+                  </div>
                 </div>
 
                 {/* Card Content */}

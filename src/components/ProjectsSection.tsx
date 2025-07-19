@@ -97,7 +97,7 @@ const ProjectsSection = () => {
       title: "3D Portfolio",
       description: "Interactive 3D portfolio website with Three.js animations and immersive user experience.",
       tech: ["Three.js", "React", "GSAP", "Blender"],
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop",
+      image: "/lovable-uploads/8c620d1c-22aa-4472-b7cf-14cb3d49de01.png",
       github: "#",
       live: "#",
       featured: true
@@ -188,8 +188,9 @@ const ProjectsSection = () => {
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className={`w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 ${
-                      project.title === "YouTube Clone" ? "bg-black p-8" : "object-cover"
+                    className={`w-full h-full group-hover:scale-110 transition-transform duration-700 ${
+                      project.title === "YouTube Clone" ? "bg-black p-8 object-contain" : 
+                      project.title === "3D Portfolio" ? "object-cover" : "object-cover"
                     }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />

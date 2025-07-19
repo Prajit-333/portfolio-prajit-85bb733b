@@ -87,7 +87,7 @@ const ProjectsSection = () => {
       title: "YouTube Clone",
       description: "Full-featured YouTube clone with video streaming, user authentication, and responsive design.",
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
+      image: "/lovable-uploads/7c850b9c-7379-40d0-b60a-55f11e6418d9.png",
       github: "#",
       live: "#",
       featured: true
@@ -188,7 +188,9 @@ const ProjectsSection = () => {
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 ${
+                      project.title === "YouTube Clone" ? "bg-black p-8" : "object-cover"
+                    }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import profileImage from '@/assets/profile-image.png';
+import aboutProfileImage from '../assets/about-profile.png';
 import { 
   Code, 
   PaintBrush, 
@@ -158,7 +158,7 @@ const AboutSection = () => {
               {/* Image container */}
               <div className="relative w-80 h-80 rounded-full overflow-hidden glass border-2 border-primary/30">
                 <img 
-                  src="/lovable-uploads/1cebfdde-5f4d-4a3c-834c-789217b7e79c.png"
+                  src={aboutProfileImage}
                   alt="Milad - Web Developer"
                   className="w-full h-full object-cover"
                 />

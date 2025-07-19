@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, GithubLogo } from 'phosphor-react';
 import { Button } from '@/components/ui/button';
+import youtubeProjectImage from '../assets/youtube-project.png';
+import portfolioProjectImage from '../assets/portfolio-project.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,7 +89,7 @@ const ProjectsSection = () => {
       title: "YouTube Clone",
       description: "Full-featured YouTube clone with video streaming, user authentication, and responsive design.",
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      image: "/lovable-uploads/1d5ea878-9bbf-424a-b806-f77251b0b11c.png",
+      image: youtubeProjectImage,
       github: "#",
       live: "#",
       featured: true
@@ -97,7 +99,7 @@ const ProjectsSection = () => {
       title: "3D Portfolio",
       description: "Interactive 3D portfolio website with Three.js animations and immersive user experience.",
       tech: ["Three.js", "React", "GSAP", "Blender"],
-      image: "/lovable-uploads/629e004c-cb11-4e68-8304-d7a35de57ce0.png",
+      image: portfolioProjectImage,
       github: "#",
       live: "#",
       featured: true

@@ -184,14 +184,15 @@ const ProjectsSection = () => {
               {/* Card */}
               <div className="relative glass rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors duration-300">
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className={`relative h-48 overflow-hidden ${project.title === "YouTube Clone" ? "bg-black" : ""}`}>
                   <img 
                     src={project.image}
                     alt={project.title}
                     className={`w-full h-full group-hover:scale-110 transition-transform duration-700 ${
-                      project.title === "YouTube Clone" ? "bg-black p-8 object-contain" : 
+                      project.title === "YouTube Clone" ? "bg-black p-12 object-contain" : 
                       project.title === "3D Portfolio" ? "object-cover" : "object-cover"
                     }`}
+                    style={project.title === "YouTube Clone" ? { backgroundColor: '#000000' } : {}}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                   
